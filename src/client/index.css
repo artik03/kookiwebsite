@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@500&display=swap");
+
+:root {
+  --black: #1c110a;
+  --honey-orange: #e9b44c;
+  --melon-yellow: #e4d6a7;
+  --carmine: #9b2915;
+  --teal: #50a2a7;
+  --white: #f4f4f4;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--white);
+}
+
+/*
+general styles ---------------------------------------
+*/
+
+a.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/*animations -----------------------------*/
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-in;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-up {
+  animation: scaleUp 1.25s cubic-bezier(0.42, 0, 0.36, 0.79);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40) 1s 1 normal both;
+}
