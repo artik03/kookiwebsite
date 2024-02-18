@@ -11,7 +11,7 @@ export default function MyRecipes({
   getRecipes: () => void;
   recipes: Recipe[];
 }) {
-  const [recipesToShow, setRecipesToShow] = useState<Recipe[]>([]);
+  const [recipesToShow, setRecipesToShow] = useState<Recipe[]>(recipes);
   const handleDeleteRecipeCard = async (title: string) => {
     try {
       const response: AxiosResponse<{ message: string }> = await axios.delete(
