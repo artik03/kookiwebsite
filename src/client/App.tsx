@@ -3,7 +3,7 @@ import Header from "./Header";
 import MakeYourRecipe from "./MakeYourRecipe";
 import TrendingRecipes from "./MyRecipes";
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export interface Recipe {
   img?: string;
@@ -25,6 +25,10 @@ function App() {
         console.log(error);
       }
     );
+  }, []);
+
+  useEffect(() => {
+    getRecipes();
   }, []);
 
   return (
